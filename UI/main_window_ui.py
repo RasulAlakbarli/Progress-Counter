@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'screen_1.ui'
+## Form generated from reading UI file 'main_window.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -15,18 +15,22 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QDialog, QFormLayout, QGridLayout,
-    QGroupBox, QLabel, QLineEdit, QPushButton,
-    QSizePolicy, QWidget)
+from PySide6.QtWidgets import (QApplication, QFormLayout, QGridLayout, QGroupBox,
+    QLabel, QLineEdit, QMainWindow, QPushButton,
+    QSizePolicy, QStatusBar, QWidget)
 
-class Ui_Dialog_1(object):
-    def setupUi(self, Dialog_1):
-        if not Dialog_1.objectName():
-            Dialog_1.setObjectName(u"Dialog_1")
-        Dialog_1.resize(577, 439)
-        self.gridLayout = QGridLayout(Dialog_1)
+from UI.screen_2_ui import Ui_Dialog_2
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        if not MainWindow.objectName():
+            MainWindow.setObjectName(u"MainWindow")
+        MainWindow.resize(800, 600)
+        self.centralwidget = QWidget(MainWindow)
+        self.centralwidget.setObjectName(u"centralwidget")
+        self.gridLayout = QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.groupBox = QGroupBox(Dialog_1)
+        self.groupBox = QGroupBox(self.centralwidget)
         self.groupBox.setObjectName(u"groupBox")
         self.formLayout = QFormLayout(self.groupBox)
         self.formLayout.setObjectName(u"formLayout")
@@ -61,26 +65,30 @@ class Ui_Dialog_1(object):
         self.formLayout.setWidget(3, QFormLayout.FieldRole, self.label_4)
 
 
-        self.gridLayout.addWidget(self.groupBox, 1, 0, 1, 1)
+        self.gridLayout.addWidget(self.groupBox, 0, 0, 1, 1)
 
-        self.pb_start = QPushButton(Dialog_1)
+        self.pb_start = QPushButton(self.centralwidget)
         self.pb_start.setObjectName(u"pb_start")
 
-        self.gridLayout.addWidget(self.pb_start, 2, 0, 1, 1)
+        self.gridLayout.addWidget(self.pb_start, 1, 0, 1, 1)
 
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.statusbar = QStatusBar(MainWindow)
+        self.statusbar.setObjectName(u"statusbar")
+        MainWindow.setStatusBar(self.statusbar)
 
-        self.retranslateUi(Dialog_1)
+        self.retranslateUi(MainWindow)
 
-        QMetaObject.connectSlotsByName(Dialog_1)
+        QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
-    def retranslateUi(self, Dialog_1):
-        Dialog_1.setWindowTitle(QCoreApplication.translate("Dialog_1", u"screen_1", None))
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.groupBox.setTitle("")
-        self.label.setText(QCoreApplication.translate("Dialog_1", u"Name of tracked item:", None))
-        self.label_2.setText(QCoreApplication.translate("Dialog_1", u"Target count: ", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Name of tracked item:", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Target count: ", None))
         self.label_3.setText("")
         self.label_4.setText("")
-        self.pb_start.setText(QCoreApplication.translate("Dialog_1", u"Start", None))
+        self.pb_start.setText(QCoreApplication.translate("MainWindow", u"Start", None))
     # retranslateUi
 
